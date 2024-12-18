@@ -15,6 +15,7 @@ export async function POST(request: Request) {
     console.log(`[Instagram API] Starting scrape for user: ${username}`);
 
     const scraper = new InstagramScraper();
+
     const profile = await scraper.scrapeProfile(username, {
       maxScrolls: 2,
       maxPosts: 12,

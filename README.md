@@ -6,6 +6,9 @@ A simple demo showing how to use [@cdirks4/insta-scraper](https://www.npmjs.com/
 
 ```bash
 npm install @cdirks4/insta-scraper
+
+# Install Chrome for Puppeteer
+npx puppeteer browsers install chrome
 ```
 
 ## Basic Usage
@@ -67,3 +70,12 @@ Always wrap scraping calls in try/catch blocks and implement appropriate error h
 - Some profiles may not be accessible if they are private
 - Consider implementing rate limiting in production use
 - Image URLs may expire after some time
+- Requires Puppeteer ≥ 22.8.2 for optimal compatibility
+
+## Troubleshooting
+
+If you see warnings about deprecated Puppeteer versions, update your dependencies:
+
+```bash
+npm install @cdirks4/insta-scraper@latest
+```

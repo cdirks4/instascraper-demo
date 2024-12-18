@@ -5,7 +5,7 @@ import InstagramProfile from "@/components/InstagramProfile";
 
 export default function Home() {
   const [username, setUsername] = useState("");
-  const [profile, setProfile] = useState<any>(null);
+  const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -31,8 +31,10 @@ export default function Home() {
       }
 
       setProfile(data.profile);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(
+        err instanceof Error ? err.message : "An unknown error occurred"
+      );
     } finally {
       setLoading(false);
     }
